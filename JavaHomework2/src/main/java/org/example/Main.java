@@ -9,21 +9,25 @@ public class Main {
         int sum = 0;
         String positiveNumbers = "PositiveNumbers: ";
 
-        int i;
-        for(i = 0; i < numbers.length; ++i) {
+        // Generating array
+
+        for(int i = 0; i < numbers.length; i++) {
             Random random = new Random();
             int upperBound = 10;
             numbers[i] = random.nextInt(upperBound);
         }
+        // Printing sum
 
-        for(i = 0; i < numbers.length; ++i) {
+        for(int i = 0; i < numbers.length; i++) {
             sum += numbers[i];
             if (sum > 5 && sum < 45) {
                 System.out.println("Sum =" + sum + " (After plus element with index " + i + "( value = " + numbers[i] + "))");
             }
         }
 
-        for(i = 0; i < numbers.length; ++i) {
+        // Printing positive numbers
+
+        for(int i = 0; i < numbers.length; i++) {
             if (numbers[i] % 2 == 0 && numbers[i] > 0 && !positiveNumbers.contains(",")) {
                 positiveNumbers = positiveNumbers + numbers[i];
             }
@@ -37,8 +41,24 @@ public class Main {
             }
         }
 
+        // Sorting with "for"
+
+        int[] sortedArrays = Arrays.copyOf(numbers, numbers.length);
+
+        for(int i = 1; i < sortedArrays.length; i++) {
+                int value = sortedArrays[i];
+                int j = i-1;
+                while (j >= 0 && sortedArrays[j] < value){
+                    sortedArrays[j+1] = sortedArrays[j];
+                    j--;
+                }
+            sortedArrays[j+1] = value;
+        }
+
         System.out.println(Arrays.toString(numbers));
         System.out.println(positiveNumbers);
+        // Sorting
         System.out.println(Arrays.toString(Arrays.stream(numbers).sorted().toArray()));
+        System.out.println(Arrays.toString(sortedArrays));
     }
 }

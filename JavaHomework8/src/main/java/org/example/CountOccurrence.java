@@ -3,7 +3,7 @@ package org.example;
 import java.util.List;
 
 public class CountOccurrence {
-    public int countOccurrence(List<String> list, String string){
+    public String countOccurrence(List<String> list, String string){
         int count = 0;
 
         for (String word: list) {
@@ -12,6 +12,6 @@ public class CountOccurrence {
             }
         }
 
-        return count;
+        return "Occurrences of '" + string + "': " + count;
     }
 }

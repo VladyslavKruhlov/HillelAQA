@@ -23,9 +23,9 @@ public class Main {
         list.add("Ben");
         list.add("John");
 
-//        int resultForCountOccurrence = countOccurrence.countOccurrence(list, word);
+        String resultForCountOccurrence = countOccurrence.countOccurrence(list, word);
 //
-//        System.out.println(resultForCountOccurrence);
+        System.out.println(resultForCountOccurrence);
 //        calcOccurrence.calcOccurrence(list);
         findOccurrence.findOccurrence(list);
 //        findOccurrence2.findOccurrence(list);

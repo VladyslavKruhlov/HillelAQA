@@ -21,13 +21,20 @@ public class FindOccurrence {
             }
             calc.put(word, value);
         }
-        List<Object> res = new ArrayList<>();
+        List<String> res = new ArrayList<>();
 
-        for (Map.Entry<String, Integer> entry: calc.entrySet()){
+        for (Map.Entry<String, Integer> entry : calc.entrySet()) {
             String key = entry.getKey();
             Integer value = entry.getValue();
-            res.add("{name:"+"\""+key+"\""+", occurrence: "+value+"}");
+            res.add("  {name: \"" + key + "\", occurrence: " + value + "}");
         }
-            System.out.println(res);
+
+        System.out.println("[");
+        int index = 0;
+        for (String item : res) {
+            System.out.println(item + (index < res.size() - 1 ? "," : ""));
+            index++;
         }
+        System.out.println("]");
+    }
 }

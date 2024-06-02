@@ -4,7 +4,7 @@ import org.example.Exceptions.InvalidDateException;
 import org.example.Exceptions.ReservationNotFoundException;
 import org.example.Exceptions.RoomAlreadyBookedException;
 
-public class Main {
+public class HotelTest {
     public static void main(String[] args) throws RoomAlreadyBookedException, ReservationNotFoundException, InvalidDateException {
 
         Hotel hotel = new Hotel();

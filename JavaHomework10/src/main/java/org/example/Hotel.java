@@ -10,7 +10,7 @@ import java.util.List;
 public class Hotel {
     private List<Reservation> reservations;
 
-    public List<Reservation> getReservations(Reservation reservedRoom4) {
+    public List<Reservation> getReservations() {
         return reservations;
     }
 

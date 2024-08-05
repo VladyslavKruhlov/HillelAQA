@@ -131,7 +131,7 @@ public class HillelLoginPage {
                 .click();
         return this;
     }
-    public HillelLoginPage checkSuccessfulRegistrationUrl() throws InterruptedException {
+    public HillelLoginPage checkSuccessfulUrl() throws InterruptedException {
         Thread.sleep(3000);
         assertEquals(WebDriverRunner.url(), URL_HILLEL_AFTER_REGISTRATION);
         return this;
@@ -154,10 +154,10 @@ public class HillelLoginPage {
         return this;
     }
 
-    public HillelLoginPage getCodeFromMailinator() throws InterruptedException {
+    public HillelLoginPage getCodeFromMailinator() {
         switchTo().frame("html_msg_body");
-        SelenideElement h1 = $(HillelLoginPageLocators.CONFIRM_CODE_TITLE);
-        executeJavaScript("arguments[0].scrollIntoView(true);", h1);
+        SelenideElement codeTitle = $(HillelLoginPageLocators.CONFIRM_CODE_TITLE);
+        executeJavaScript("arguments[0].scrollIntoView(true);", codeTitle);
 
         this.verifyCode = HillelLoginPageLocators.MAILINATOR_CODE.getText();
 

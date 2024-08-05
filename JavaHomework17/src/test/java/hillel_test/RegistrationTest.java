@@ -29,6 +29,6 @@ public class RegistrationTest {
                 .getCodeFromMailinator()
                 .enterVerificationCode()
                 .clickToSignUpButton()
-                .checkSuccessfulRegistrationUrl();
+                .checkSuccessfulUrl();
     }
 }
